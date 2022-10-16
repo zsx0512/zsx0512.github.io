@@ -57,6 +57,99 @@
 
   
     
+    <h3 class="article-title"><a href="/2022/09/27/web知识/"><span>web知识</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/09/27/web知识/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-09-27T05:16:52.000Z">
+          2022-09-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="常见web框架"><a href="#常见web框架" class="headerlink" title="常见web框架"></a>常见web框架</h1><ul>
+<li>python?</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2022/09/27/ssl与证书/"><span>ssl与证书</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2022/09/27/ssl与证书/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-09-27T05:15:46.000Z">
+          2022-09-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="http与ssl"><a href="#http与ssl" class="headerlink" title="http与ssl"></a>http与ssl</h1><h1 id="证书，openssl"><a href="#证书，openssl" class="headerlink" title="证书，openssl"></a>证书，openssl</h1>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2022/09/26/电子邮件/"><span>电子邮件</span></a></h3>
     
   
@@ -297,7 +390,119 @@
 <h2 id="主要目标"><a href="#主要目标" class="headerlink" title="主要目标"></a>主要目标</h2><p>方便性：方便了用户的操作，比如高级语言编译器和一系列操作命令，比如文件管理mkdir，进程管理ps等等<br>有效性：管理系统资源，提高利用率和组织计算机工作流程，加速程序运行，提高系统吞吐量，<br>可扩充性：os体系结构发展，方便增加新功能和模块<br>开放性：兼容性问题，要按相同的标准</p>
 <h2 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h2><p>管理计算机系统资源(硬件资源和软件）资源的分配和回收，存储器，cpu,io设备，文件(数据和程序)，解决资源争用的问题<br>充当用户与计算机硬件之间的接口<br>抽象化计算机资源，屏蔽物理接口的具体实现，用户只需专注于抽象化的数据结构和操作命令，此时的的机器叫虚机器，在此之上可以继续抽象(比如文件系统： 物理接口–i&#x2F;o设备管理软件–文件管理软件–窗口化环境（物理接口？）</p>
 <h2 id="推动操作系统发展的动力"><a href="#推动操作系统发展的动力" class="headerlink" title="推动操作系统发展的动力"></a>推动操作系统发展的动力</h2><p>硬件的更新换代（8-16-32-64位的芯片规格）<br>方便用户(比如交互方式，命令行到图形化)<br>新应用需求（注重实时性的情况，和多媒体）<br>计算机体系结构的发展（单核-多核-网络netboot）<br>提高资源利用率 重点(cpu:单任务-批处理-spooling  存储器：网络文件系统，和数据库系统，大家一起用，吞吐量就上来了)</p>
-<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><h1 id="cpu调度"><a href="#cpu调度" class="headerlink" title="cpu调度"></a>cpu调度</h1><h1 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h1><h1 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h1><h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><ul>
+<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><p>多道程序下，只有不存在前趋关系的程序才可以并发执行。<br>为了让程序能够并发独立的运行引入进程概念，<br>进程的状态 就绪   阻塞  执行 引入挂起和激活原语就还包含静止和活跃就绪&#x2F;阻塞，<br>进程的结构，pcb 进程控制块，储存进程标识符，描述，状态，寄存器现场，程序状态字和pc，文件的指针等等程序运行需要的信息<br>进程的控制<br>  创建<br>  终止<br>信号量机制度<br>信号量表示前趋图<br>pv  wait() signal()<br>整形  s&#x3D;1<br>记录型 s&#x3D;n 阻塞队列<br>管程  共享资源的数据结构和一组管理操作的的集合<br>生产者消费者<br>读写<br>筷子</p>
+<ul>
+<li>进程通信<br>直接通信<br>信箱通信</li>
+<li>线程</li>
+</ul>
+<h1 id="cpu调度"><a href="#cpu调度" class="headerlink" title="cpu调度"></a>cpu调度</h1><ul>
+<li>进程调度</li>
+<li>作业调度</li>
+<li>死锁<ul>
+<li><p>资源</p>
+<ol>
+<li>可重用资源</li>
+<li>可消耗资源</li>
+</ol>
+</li>
+<li><p>银行家算法 </p>
+<ul>
+<li>request</li>
+<li>allocated</li>
+<li>need</li>
+<li>request&lt;&#x3D;need</li>
+<li>allocated&lt;need</li>
+</ul>
+</li>
+<li><p>安全性算法</p>
+<ul>
+<li>work</li>
+<li>result</li>
+<li>进程分配完成，</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h1><ul>
+<li><p>中级调度 进程调度，文件区和兑换区</p>
+</li>
+<li><p>程序和数据装入内存，</p>
+<ul>
+<li>直接装入</li>
+<li>链接装入</li>
+<li>动态可重定位装入</li>
+</ul>
+</li>
+<li><p>程序链接装入模块再装入内存</p>
+</li>
+<li><p>紧凑，和可重定位，动态可重定位</p>
+</li>
+<li><p>分区分配</p>
+<ul>
+<li>连续分配</li>
+<li>链接分配</li>
+<li>索引分配</li>
+</ul>
+</li>
+<li><p>分配策略</p>
+<ul>
+<li>首次适应 地址低–高</li>
+<li>循环首次适应 加上循环</li>
+<li>最佳适应 大小 小到大 产生内存零头</li>
+<li>最坏适应 大-小 不容易产生零头</li>
+</ul>
+</li>
+<li><p>解决零头问题，增加分页分段</p>
+<ul>
+<li><p>分页 </p>
+<ul>
+<li>盘区有盘块组成，每个盘块看成一个页，分配内存时候，按页分配</li>
+<li>结构: 页号+页内地址 , 页表页号转盘块号，快表</li>
+<li>快表页命中率a  t&#x3D; t1*a+(1-a)t2+t2</li>
+<li>缺点:盘区空间越大，页表项越多，页表越大，占太多内存，也不方便查找</li>
+<li>二级页表和多级页表，页表分级，内存页表变小，查找效率增加，2的开n方</li>
+</ul>
+</li>
+<li><p>分段</p>
+<ul>
+<li>程序分段，段长不定加基址定位</li>
+<li>段表     </li>
+<li>地址变换机构</li>
+</ul>
+</li>
+<li><p>段页式</p>
+<ul>
+<li>先分段再分页，</li>
+<li>优点：</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="虚拟存储器"><a href="#虚拟存储器" class="headerlink" title="虚拟存储器"></a>虚拟存储器</h1><h1 id="输入输出系统"><a href="#输入输出系统" class="headerlink" title="输入输出系统"></a>输入输出系统</h1><p>用途：管理繁杂的io设备<br>管理对象：I&#x2F;O设备和相应的设备控制器<br>任务：完成用户提出的i&#x2F;o请求，提高i&#x2F;o速率和设备利用率，方便高层进程使用设备<br>基本功能：</p>
+<ol>
+<li>方便用户使用I&#x2F;O设备</li>
+</ol>
+<ul>
+<li>隐藏物理设备的细节</li>
+<li>与设备的无关性</li>
+</ul>
+<ol start="2">
+<li>提高cpu和i&#x2F;o的利用率</li>
+</ol>
+<ul>
+<li>提高cpu和i&#x2F;o的利用率</li>
+<li>控制i&#x2F;o设备</li>
+</ul>
+<ol start="3">
+<li>保障设备共享时，系统有序进行，能够及时发现错误和修正错误</li>
+</ol>
+<ul>
+<li>确保正确的设备共享</li>
+<li>错误处理</li>
+</ul>
+<h2 id="i-x2F-o-层次结构"><a href="#i-x2F-o-层次结构" class="headerlink" title="i&#x2F;o 层次结构"></a>i&#x2F;o 层次结构</h2><h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><ul>
 <li>数据项构成记录，记录构成文件</li>
 <li>数据项：描述对象某种属性的字符集<br>组合数据项：若干个基本数据项构成</li>
 <li>记录: 描述对象某方面的属性</li>
@@ -321,7 +526,66 @@
 <ul>
 <li>对象及其属性<br>   文件</li>
 </ul>
-<h1 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h1><h1 id="操作系统接口"><a href="#操作系统接口" class="headerlink" title="操作系统接口"></a>操作系统接口</h1>
+<h1 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h1><p>  组织方式<br>  连续组织<br>  链接组织<br>   隐式链接<br>   显式链接<br>  索引组织</p>
+<ul>
+<li>单机索引</li>
+<li>多级索引<ul>
+<li>直接 0-9 直接存盘块号</li>
+<li>一级间接地址 10 存一次间址块&#x2F;索引块  索引块存盘块号</li>
+<li>二级 11   二次间址块存一次间址块</li>
+<li>三级 12   三次间址块存二次间址块存一次间址块<br>FAT表项存储下一个盘块的链接指针<br>链首指针存fcb</li>
+</ul>
+</li>
+</ul>
+<p>  文件系统 文件需要盘块来储存<br>  fat表项个数和盘块数的关系<br>  fat12<br>  磁盘容量大，盘块数就多，需要更多的表项，需要更大的表项位数<br>  如何解决<br>  以簇为fat表的基本单位<br>  又引发簇内碎片&#x2F;零头<br>  扩大表项位数到16<br>  fat16<br>  磁盘容量增加，增加表项位数<br>  fat32<br>   -单个文件不超过4g<br>  ntfs<br>   -长文件名<br>盘块分配</p>
+<ul>
+<li>空闲链表</li>
+<li>空闲表</li>
+<li>位示图</li>
+<li>成组链接法<br>提高磁盘i&#x2F;o</li>
+<li>高速缓存</li>
+<li>数据交付给请求进程（给数据还是给指针）</li>
+<li>置换算法</li>
+<li>周期写回磁盘 </li>
+<li>提前读（读多个盘块</li>
+<li>延迟写</li>
+<li>物理块分布</li>
+<li>虚拟盘</li>
+</ul>
+<p> 磁盘容错</p>
+<ul>
+<li>raid</li>
+<li>一级<ul>
+<li>双份目录和双份文件分配表</li>
+<li>写后读 写完数据读一下与内存比对</li>
+<li>热修复重定向   划分单独区域，存磁盘有缺陷时的数据，并登记</li>
+</ul>
+</li>
+<li>二级<ul>
+<li>磁盘镜像 加一个磁盘，存相同数据</li>
+<li>磁盘双工  加磁盘还加控制器</li>
+</ul>
+</li>
+<li>集群  <ul>
+<li>双机热备份  两台服务器，一台专门监听另外一台的数据操作，出错时，替代工作</li>
+<li>双机互为备份  两台不同任务的服务器互相存对方的备份</li>
+<li>公用磁盘    磁盘数据放在公共的磁盘系统中， 不用通过网络复制信息，与服务器产生耦合，机器出错，磁盘所有权交由另一台机器<br> 后备系统</li>
+</ul>
+</li>
+<li>磁带机</li>
+<li>磁盘及</li>
+<li>光盘</li>
+</ul>
+<p> 事务一致性</p>
+<ul>
+<li>事务记录表记录事务类型，对象和操作前后的值 与 redo undo恢复算法</li>
+<li>检查点</li>
+<li>并发锁互斥和共享</li>
+<li>重复文件一致性检查</li>
+<li>连接数一致性检查</li>
+</ul>
+<p>  热备份</p>
+<h1 id="操作系统接口"><a href="#操作系统接口" class="headerlink" title="操作系统接口"></a>操作系统接口</h1>
       
     </div>
 
@@ -407,7 +671,18 @@
 </li>
 </ul>
 <h2 id="汉译英换主语"><a href="#汉译英换主语" class="headerlink" title="汉译英换主语"></a>汉译英换主语</h2><h2 id="中西方文化差异"><a href="#中西方文化差异" class="headerlink" title="中西方文化差异"></a>中西方文化差异</h2><h2 id="非文学翻译要点"><a href="#非文学翻译要点" class="headerlink" title="非文学翻译要点"></a>非文学翻译要点</h2><p>被动语态转主动<br>不用被字换其他词</p>
-<h1 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h1><p>定语从句的翻译<br>代词的翻译<br>非谓语动词<br>被动语态的翻译<br>增词和减词 </p>
+<h1 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h1><ul>
+<li><p>定语从句的翻译<br> 短前长后 8个单词为界<br> 本位词：这这样，外位语替代的部分<br> which可以翻译为这样<br> 循环套用  中心词+定语1+定语2 &#x3D;&gt; 定语2+定语1+中心词 关系词which&#x2F;where翻译要注意所指对象<br> 并列套用  中心词+定语1+定语2+定语3<br> 定语从句并列式。关系词根据情况灵活翻译， where为在那里，which翻译为这然后用后置译法<br> 剥洋葱</p>
+</li>
+<li><p>代词的翻译<br>指明要点，不抽象不具体 </p>
+</li>
+<li><p>非谓语动词</p>
+</li>
+<li><p>被动语态的翻译<br> 被动句无宾语时，被动变主动<br> 有宾语时，隐形被动语态，为。。所，由，可以<br> 有被不用被，英译汉，没有被字却能表达出被动含义的句子<br> 中文先出主语，主语在前，时间状语在后</p>
+</li>
+<li><p>增词和减词</p>
+</li>
+</ul>
 
       
     </div>

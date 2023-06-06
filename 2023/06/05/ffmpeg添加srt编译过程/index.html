@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="记录人生">
+    <title>假面骑士的blog - 试做型</title>
+    
+      <link rel="icon" href="/img/favicon.ico">
+    
+    <meta name="keyword"  content="">
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+      
+<link rel="stylesheet" href="/css/helpers.css">
+    
+    
+  
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  <div class="loading-wrapper" data-loading="true">
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="page" data-filter="true">
+    <div class="head" data-show="true">
+      <header class="head-header">
+  <div class="head-author">
+    <a href="/" class="head-author-link">
+      假面骑士的blog</a>
+    </div>
+  <div class="head-right">
+    <!-- <div class="head-search">
+      <input class="head-searchK"></input>
+      <span class="head-searchT">
+        Search</span>
+    </div> -->
+    <button class="bar-wrap" id="bar-wrap-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="head-about" id="head-about">
+      
+      <a class="head-about-link" href="/about">
+        关于</a>
+      
+    </div>
+  </div>
+</header>
+
+    </div>
+    <div class="main">
+      
+
+<div class="menu-bar-head" id="menu-bar" data-show="false">
+  <ul class="menu-bar-ul">
+    
+      
+      <li class="menu-bar-item ">
+          
+              <a href="/categories/Posts/">
+          
+              <span>Posts1</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item ">
+          
+              <a href="/categories/Posts2/">
+          
+              <span>Posts2</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item  border ">
+          
+            <a href="/archives">
+          
+              <span>Archives</span>
+            </a>
+      </li>
+    
+      
+      <li class="menu-bar-item ">
+          
+            <a href="/tags">
+          
+              <span>Tags</span>
+            </a>
+      </li>
+    
+    
+      <li class="menu-bar-item">
+        <a href="/about">
+          <span>关于</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+      <article class="post" id="post">
+  <header class="post-head">
+    <h1 class="post-title">
+      <a class="title" href="/2023/06/05/ffmpeg%E6%B7%BB%E5%8A%A0srt%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/">
+        ffmpeg添加srt编译过程
+      </a>
+    </h1>
+  </header>
+  <div class="post-datetag">
+    <div class="post-date">
+      <time class="post-time" title="2023-06-05 17:30:36" datetime="2023-06-05T09:30:36.000Z" itemprop="datePublished">
+  2023-06-05</time>
+    </div>
+    |
+    <div class="post-tag">
+      
+    </div>
+    |
+    
+  
+
+    <div class="post-visit">
+      <span id="busuanzi_container_page_pv">
+        <span id="busuanzi_value_page_pv"></span>
+        访问
+      </span>
+    </div>
+
+  
+
+
+  </div>
+
+  
+    <div class="post-word-count">
+      
+
+本文共439字。
+
+    </div>
+  
+
+  
+    <div class="post-cc">
+      版权声明：
+      
+        署名-非商业性使用-相同方式共享 | <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/2.5/cn/">CC BY-NC-SA 2.5 CN</a>
+      
+    </div>
+  
+
+  
+
+
+  <div class="article-entry" itemprop="articleBody">
+    <p>为了完成B站24小时不间断直播,我需要在服务器上进行推流，为其我需要强大的ffmpeg</p>
+<p>B站推流地址有两种 rtmp和srt</p>
+<p>rtmp 广泛使用的主流推流方式</p>
+<p>srt  海康威视的一种推流协议 需要在ffmpeg里添加libsrt进行编译，实现srt协议下的推流</p>
+<p>网上的编译教程都是在linux系统下进行的<br>附上ffmpeg官方的添加支持库的教程,包含添加常用的h.264,h.265支持库等编译教程<br><a target="_blank" rel="noopener" href="https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu">教程地址</a></p>
+<p>附上srt的下载编译命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br><span class="line">cd ~/ffmpeg_sources</span><br><span class="line">git clone --depth 1 https://github.com/Haivision/srt.git</span><br><span class="line">mkdir srt/build</span><br><span class="line">cd srt/build</span><br><span class="line">cmake -DCMAKE_INSTALL_PREFIX=&quot;$HOME/ffmpeg_build&quot; -DENABLE_C_DEPS=ON -DENABLE_SHARED=OFF -DENABLE_STATIC=ON ..</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>编译出的srt.pc后续ffmpeg编译时要copy到$HOME&#x2F;ffmpeg_build&#x2F;lib&#x2F;pkgconfig下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">cd ~/ffmpeg_sources &amp;&amp; \</span><br><span class="line">wget --no-check-certificate -O   ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 &amp;&amp; \</span><br><span class="line">tar xjvf ffmpeg-snapshot.tar.bz2 &amp;&amp; \</span><br><span class="line">cd ffmpeg &amp;&amp; \</span><br><span class="line">PATH=&quot;$HOME/bin:$PATH&quot; PKG_CONFIG_PATH=&quot;$HOME/ffmpeg_build/lib/pkgconfig&quot; ./configure \</span><br><span class="line">  --prefix=&quot;$HOME/ffmpeg_build&quot; \</span><br><span class="line">  --pkg-config-flags=&quot;--static&quot; \</span><br><span class="line">  --extra-cflags=&quot;-I$HOME/ffmpeg_build/include&quot; \</span><br><span class="line">  --extra-ldflags=&quot;-L$HOME/ffmpeg_build/lib&quot; \</span><br><span class="line">  --extra-libs=&quot;-lpthread -lm&quot; \</span><br><span class="line">  --ld=&quot;g++&quot; \</span><br><span class="line">  --bindir=&quot;$HOME/bin&quot; \</span><br><span class="line">  --enable-gpl \</span><br><span class="line">  --enable-libfdk-aac \</span><br><span class="line">  --enable-libfreetype \</span><br><span class="line">  --enable-libmp3lame \</span><br><span class="line">  --enable-libopus \</span><br><span class="line">  --enable-libsvtav1 \</span><br><span class="line">  --enable-libdav1d \</span><br><span class="line">  --enable-libvorbis \</span><br><span class="line">  --enable-libvpx \</span><br><span class="line">  --enable-libx264 \</span><br><span class="line">  --enable-libx265 \</span><br><span class="line">  --enable-libsrt \</span><br><span class="line">  --enable-nonfree &amp;&amp; \</span><br><span class="line">PATH=&quot;$HOME/bin:$PATH&quot; make &amp;&amp; \</span><br><span class="line">make install &amp;&amp; \</span><br><span class="line">hash -r</span><br></pre></td></tr></table></figure>
+<p>编译过程若报错,出现 xxx not found using   pkg-config 就去掉 ffmpeg编译命令中对应的–enable-xxx,即不启用这个附加库</p>
+<p>或者找到你编译出这个附加库的xxx.pc文件放到  $HOME&#x2F;ffmpeg_build&#x2F;lib&#x2F;pkgconfig下</p>
+<p>编译成功的ffmpeg 会在输出目录下，已安装ffmpeg的话，命令行调用记得修改环境变量</p>
+
+  </div>
+</article>
+
+    </div>
+    <footer class="footer-nav">
+      <div class="footer">
+        <div class="back-top" id="back-top" title="Back to top">
+          <i class="icon icon-chevron-bar-up"></i>
+        </div>
+        <span class="footer-msg">
+  
+
+  
+
+  
+  
+
+    <div>
+      <span id="busuanzi_container_site_pv">
+        <span id="busuanzi_value_site_pv">?</span> PV
+      </span>
+      <span id="busuanzi_container_site_uv">
+        <span id="busuanzi_value_site_uv">?</span> UV
+      </span>
+    </div>
+
+  
+
+
+
+  Copyright &copy;
+  2020
+  
+  
+    <span class="timeDivide">-</span>
+    2023
+  
+  zsx.
+  Power by
+  <a href="https://hexo.io/" target="_blank" rel="external nofollow">Hexo</a>
+  and
+  <a href="https://github.com/Cerallin/hexo-theme-yuzu"
+      target="_blank" rel="external nofollow" title="v2.4">
+    Theme Yuzu</a>.
+</span>
+
+      </div>
+    </footer>
+    
+
+
+<script src="/js/clipboard/clipboard.min.js"></script>
+
+
+<script src="/js/theme.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+
+  
+  <script>
+      expend = "展开";
+      collapse = "收起";
+  </script>
+  
+  
+<script src="/js/toc.js"></script>
+
+
+
+
+
+  </div>
+</body>
